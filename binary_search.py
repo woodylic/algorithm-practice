@@ -4,6 +4,7 @@ def binary_search(list, item):
     low = 0
     high = len(list) - 1
     while(low <= high):
+        print(f"Search range: {low} - {high}")
         mid = (low + high) // 2
         guess = list[mid]
         if(guess == item):
@@ -17,10 +18,13 @@ def binary_search(list, item):
     return None
 
 def test():
-    list = [1, 3, 5, 7, 9]
-    item = 1
+    list = [n for n in range(1,20)]
+    item = 13
     index = binary_search(list, item)
-    print(f"The index of {item} is {index}")
+    if(index == None):
+        print(f"{item} doesn't exist in list.")
+    else:
+        print(f"The index of {item} is {index}.")
 
 if __name__ == '__main__':
     test()
